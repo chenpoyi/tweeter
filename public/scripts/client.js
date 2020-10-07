@@ -21,6 +21,12 @@ $(document).ready(function() {
     }
   };
 
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
 
   const createTweetElement = function(tweet) {
     const user = tweet.user;
@@ -31,11 +37,11 @@ $(document).ready(function() {
           <header>
             <div class = "tweet-profile">
               <img class = "avatar-pic" src=${user.avatars} > 
-              <p>${user.name}<p>
+              <p>${escape(user.name)}</p>
             </div>
             <p class='handle'>${user.handle}</p>
           </header>
-          <p>${content.text}</p>
+          <p>${escape(content.text)}</p>
           <footer>
             <p class='date'>${days} days ago</p>
             <div>
