@@ -17,7 +17,7 @@ $(document).ready(function() {
       const $tweet = createTweetElement(tweet);
 
 
-      $('#tweets-container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+      $('#tweets-container').prepend($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
     }
   };
 
@@ -123,6 +123,7 @@ $(document).ready(function() {
       $.ajax('/tweets', { method: 'POST', data: text}).
         done(function() {
           loadTweets();
+          $('#tweet-text').val('');
         })
         .catch(function(err) {
           console.log("ERROR: ", err);
