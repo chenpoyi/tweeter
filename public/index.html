@@ -56,36 +56,17 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets">
+        <form id = 'tweet-form' method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
-            <button type="submit">Tweet</button>
+            <button id="submit-tweet" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
       <section id="tweets-container">
-        <article class='tweet'>
-          <header>
-            <div class = "tweet-profile">
-              <img class = "avatar-pic" src="/images/profile-hex.png" > 
-              <p>Paul Chen<p>
-            </div>
-            <p class='handle'>@paulchen647</p>
-          </header>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vulputate neque sed velit pulvinar, at tincidunt augue eleifend. Integer venenatis leo quis ultrices tempus. Vestibulum bibendum quam vitae ante tincidunt, ut laoreet ipsum posuere. Mauris varius, nisl ut mattis placerat, quam eros porta nisl, non blandit magna sapien eget orci. Integer auctor nunc ut urna tristique dictum. Quisque ut nibh vitae libero rhoncus rutrum vel vitae erat. Suspendisse potenti. Nam hendrerit neque sed nibh eleifend lobortis. Pellentesque pellentesque nisi in dapibus pulvinar.
-          </p>
-          <footer>
-            <p class='date'>THIS IS THE DATE</p>
-            <div>
-              <img class = "footer-icons" src="/images/flag.png" > 
-              <img class = "footer-icons" src="/images/retweet.png" > 
-              <img class = "footer-icons" src="/images/heart.png" > 
-            </div>
-          </footer>
-        </article>
+        <!--dynamically render tweets-->
       </section>
     </main>
   </body>
