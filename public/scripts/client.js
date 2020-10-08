@@ -15,11 +15,11 @@ $(document).ready(function() {
     console.log('tweet: ', text);
     console.log($('#tweet-text').val().length);
     if ($('#tweet-text').val().length > 140) {
-      $('#new-tweet-error').text("Your tweet exceeds 140 characters!");
+      $('#new-tweet-error').text("❗❗ Your tweet exceeds 140 characters! ❗❗");
       $('#new-tweet-error').slideDown()
      // alert("Your tweet exceeds 140 characters!");
     } else if ($('#tweet-text').val().length === 0){
-      $('#new-tweet-error').text("Your tweet is empty!");
+      $('#new-tweet-error').text("❗❗ Your tweet is empty! ❗❗");
       $('#new-tweet-error').slideDown()
       
       //alert("Your tweet is empty!");
