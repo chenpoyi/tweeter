@@ -36,14 +36,14 @@ $(document).ready(function() {
     <article class='tweet'>
           <header>
             <div class = "tweet-profile">
-              <img class = "avatar-pic" src=${user.avatars} > 
+              <img class = "avatar-pic" src=${escape(user.avatars)} > 
               <p>${escape(user.name)}</p>
             </div>
-            <p class='handle'>${user.handle}</p>
+            <p class='handle'>${escape(user.handle)}</p>
           </header>
           <p>${escape(content.text)}</p>
           <footer>
-            <p class='date'>${days} days ago</p>
+            <p class='date'>${escape(days)} days ago</p>
             <div>
               <img class = "footer-icons" src="/images/flag.png" > 
               <img class = "footer-icons" src="/images/retweet.png" > 
@@ -72,6 +72,7 @@ $(document).ready(function() {
     $.ajax('/tweets', { method: 'GET'})
       .done(
         function(data) {
+          $('#new-tweet-error').hide();
           console.log(data);
           renderTweets(data);
         
@@ -121,13 +122,19 @@ $(document).ready(function() {
     console.log('tweet: ', text);
     console.log($('#tweet-text').val().length);
     if ($('#tweet-text').val().length > 140) {
-      alert("Your tweet exceeds 140 characters!");
+      $('#new-tweet-error').text("Your tweet exceeds 140 characters!");
+      $('#new-tweet-error').slideDown()
+     // alert("Your tweet exceeds 140 characters!");
     } else if ($('#tweet-text').val().length === 0){
-      alert("Your tweet is empty!");
+      $('#new-tweet-error').text("Your tweet is empty!");
+      $('#new-tweet-error').slideDown()
+      
+      //alert("Your tweet is empty!");
     }
       else {
       $.ajax('/tweets', { method: 'POST', data: text}).
         done(function() {
+          $('#new-tweet-error').slideUp();
           loadTweets();
           $('#tweet-text').val('');
         })

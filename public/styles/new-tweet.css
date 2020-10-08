@@ -40,3 +40,11 @@ button {
   color: red;
 }
 
+#new-tweet-error {
+  color: #D8000C;
+  background-color: #FFD2D2;
+  margin:10px 22px;
+  font-size:1em;
+  vertical-align:middle;
+  font-family: 'Source Sans Pro', sans-serif;
+}
