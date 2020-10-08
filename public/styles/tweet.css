@@ -83,3 +83,28 @@ article.tweet:hover{
 article.tweet:hover .footer-icons {
   opacity: 1;
 }
+
+#back-to-top-button{
+  display: inline-block;
+  background-color: #d91431;
+  width: 70px;
+  height: 70px;
+  text-align: center;
+  
+  margin: 30px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 1;
+}
+
+#back-to-top-button span{
+  font-size: 2em;
+}
+
+/* .show-button {
+  opacity: 1;
+} */
+

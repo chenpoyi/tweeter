@@ -40,11 +40,26 @@ $(document).ready(function() {
   });
 
   $("nav > button").click(function(event) {
-    $('.new-tweet').slideToggle()
+    $('.new-tweet').slideToggle();
+    $('#tweet-text').focus();
 
 
 
   })
+
+  $(window).scroll(function(event) {
+    if ($(window).scrollTop() > 50) {
+      $('#back-to-top-button').show()
+    } else {
+      console.log('not down')
+      $('#back-to-top-button').hide()
+    }
+  });
+
+  $('#back-to-top-button').click(function(event) {
+    event.preventDefault();
+    $('html, body').animate({scrollTop:0}, '300');
+  });
   //const tweets =
   //console.log(loadTweets());
   //renderTweets(tweets);
@@ -121,6 +136,7 @@ const loadTweets = function() {
       function(data) {
         $('#new-tweet-error').hide();
         $('.new-tweet').hide()
+        $('#back-to-top-button').hide();
         console.log(data);
         renderTweets(data);
       
