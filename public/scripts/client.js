@@ -13,10 +13,7 @@ $(document).ready(function() {
 
   $("#tweet-form").submit(function(event) { 
     event.preventDefault();
-    console.log();
     const text = $(this).serialize();
-    console.log('tweet: ', text);
-    console.log($('#tweet-text').val().length);
     if ($('#tweet-text').val().length > 140) {
       $('#new-tweet-error').text("❗❗ Your tweet exceeds 140 characters! ❗❗");
       $('#new-tweet-error').slideDown();
@@ -31,7 +28,6 @@ $(document).ready(function() {
           $('#tweet-text').val('');
         })
         .catch(function(err) {
-          console.log("ERROR: ", err);
         });
     } 
   });
