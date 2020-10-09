@@ -7,8 +7,6 @@
 form {
   display: flex;
   flex-direction: column;
- 
-
 }
 
 div {
@@ -18,7 +16,6 @@ div {
 }
 
 label {
-  
   font-weight: bold;
 }
 
@@ -28,7 +25,6 @@ textarea {
   border: 0;
   border-bottom: 4px solid black;
   background-color: inherit;
-
 }
 
 button {
